@@ -1,0 +1,17 @@
+H:\MyAppp\MyAppp\bin\Debug\MyAppp.exe.config
+H:\MyAppp\MyAppp\bin\Debug\MyAppp.exe
+H:\MyAppp\MyAppp\bin\Debug\MyAppp.pdb
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.csproj.AssemblyReference.cache
+H:\MyAppp\MyAppp\obj\Debug\MainWindow.g.cs
+H:\MyAppp\MyAppp\obj\Debug\SignUp.g.cs
+H:\MyAppp\MyAppp\obj\Debug\App.g.cs
+H:\MyAppp\MyAppp\obj\Debug\MyAppp_MarkupCompile.cache
+H:\MyAppp\MyAppp\obj\Debug\MyAppp_MarkupCompile.lref
+H:\MyAppp\MyAppp\obj\Debug\MainWindow.baml
+H:\MyAppp\MyAppp\obj\Debug\SignUp.baml
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.g.resources
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.Properties.Resources.resources
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.csproj.GenerateResource.cache
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.csproj.CoreCompileInputs.cache
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.exe
+H:\MyAppp\MyAppp\obj\Debug\MyAppp.pdb
