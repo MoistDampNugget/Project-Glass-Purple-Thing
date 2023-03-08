@@ -20,6 +20,8 @@ namespace MyAppp
     /// </summary>
     public partial class MainWindow : Window
     {
+        internal object label;
+
         public MainWindow()
         {
             InitializeComponent();
