@@ -41,12 +41,13 @@
             </Rectangle.Fill>
         </Rectangle>
         <TextBlock Text="Sign Up" Height="169" Margin="606,90,607.333,0" VerticalAlignment="Top" Width="700" FontSize="128" FontFamily="Inter" TextAlignment="Center" Background="#00000000"/>
-        <TextBlock HorizontalAlignment="Left" Margin="674,264,0,0" TextWrapping="Wrap" Text="Artist Name" VerticalAlignment="Top" Height="70" Width="281" FontSize="40"/>
-        <TextBlock HorizontalAlignment="Left" Margin="674,424,0,0" TextWrapping="Wrap" Text="Real Name" VerticalAlignment="Top" Height="70" Width="281" FontSize="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="674,287,0,0" TextWrapping="Wrap" Text="Artist Name" VerticalAlignment="Top" Height="70" Width="281" FontSize="40" FontFamily="Inter"/>
+        <TextBlock HorizontalAlignment="Left" Margin="674,442,0,0" TextWrapping="Wrap" Text="Real Name" VerticalAlignment="Top" Height="70" Width="281" FontSize="40" FontFamily="Inter"/>
         <TextBox x:Name ="txtArtName" HorizontalAlignment="Left" Height="80" Margin="674,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Background="#CCFFFFFF" BorderBrush="#FF878181" BorderThickness="5px" FontSize="48"/>
-        <TextBox x:Name ="txtRealName" HorizontalAlignment="Left" Height="80" Margin="674,499,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Background="#CCFFFFFF" BorderBrush="Black" FontSize="48"/>
-        <TextBlock HorizontalAlignment="Left" Margin="674,579,0,0" TextWrapping="Wrap" Text="Nationality" VerticalAlignment="Top" Height="70" Width="281" FontSize="40"/>
-        <Button x:Name ="LogIn" Content="Sign Up" HorizontalAlignment="Left" Margin="830,783,0,0" VerticalAlignment="Top" Width="246" Height="62" Background="Black" FontSize="36" Click="Button_Click"/>
-        <TextBox x:Name ="txtNationality" HorizontalAlignment="Left" Height="80" Margin="674,649,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Background="#CCFFFFFF" BorderBrush="Black" FontSize="48"/>
+        <TextBox x:Name ="txtRealName" BorderThickness="5px" HorizontalAlignment="Left" Height="80" Margin="674,499,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Background="#CCFFFFFF" BorderBrush="#FF878181" FontSize="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="674,597,0,0" TextWrapping="Wrap" Text="Nationality" VerticalAlignment="Top" Height="70" Width="281" FontSize="40" FontFamily="Inter"/>
+        <Button x:Name ="LogIn" Content="Sign Up" HorizontalAlignment="Left" Margin="798,783,0,0" VerticalAlignment="Top" Width="333" Height="62" Background="#FF673AB7" FontSize="36" Click="Button_Click" FontFamily="Inter"/>
+        <TextBox x:Name ="txtNationality" BorderThickness="5px" HorizontalAlignment="Left" Height="80" Margin="674,649,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Background="#CCFFFFFF" BorderBrush="#FF878181" FontSize="48"/>
+        <Button x:Name ="alracc" Content="Have an account?" HorizontalAlignment="Left" Margin="798,871,0,0" VerticalAlignment="Top" Width="333" Height="62" Background="#FF673AB7" FontSize="36" Click="alracc_Click" FontFamily="Inter"/>
     </Grid>
 </Window>

@@ -29,7 +29,7 @@ namespace MyAppp
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source = LABSCIFIPC16\LOCALHOST; Initial Catalog = Label_Database; Integrated Security = True");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source = LJUBO-PC; Initial Catalog = Label_Database; Integrated Security = True");
 
             try
             {
@@ -40,9 +40,12 @@ namespace MyAppp
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.Parameters.AddWithValue("@Artist_Name", txtArtName.Text);
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
+                if (count >= 1)
                 {
                     MessageBox.Show("Name Exists!");
+                    MainWindow x = new MainWindow();
+                    x.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -62,7 +65,14 @@ namespace MyAppp
 
         private void txtArtName_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
+        }
 
+        private void no_acc_button_Click(object sender, RoutedEventArgs e)
+        {
+            SignUp x = new SignUp();
+            x.Show();
+            this.Close();
         }
     }
 }

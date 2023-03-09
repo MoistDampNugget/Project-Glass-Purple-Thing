@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace MyAppp
 {
@@ -27,7 +28,7 @@ namespace MyAppp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source = LABSCIFIPC16\LOCALHOST; Initial Catalog = Label_Database; Integrated Security = True");
+            SqlConnection sqlCon = new SqlConnection(@"Data Source = LJUBO-PC; Initial Catalog = Label_Database; Integrated Security = True");
 
             try
             {
@@ -47,7 +48,17 @@ namespace MyAppp
             finally
             {
                 sqlCon.Close();
+                LogIn x = new LogIn();
+                x.Show();
+                this.Close();
             }
+        }
+
+        private void alracc_Click(object sender, RoutedEventArgs e)
+        {
+            LogIn x = new LogIn();
+            x.Show();
+            this.Close();
         }
     }
 }

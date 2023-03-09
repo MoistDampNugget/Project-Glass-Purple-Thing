@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Label_DatabaseModelStoreContainer" CdmEntityContainer="Label_DatabaseEntities">
+    <EntitySetMapping Name="Artist_Contact">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Artist_Contact">
+        <MappingFragment StoreEntitySet="Artist_Contact">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Discord" ColumnName="Discord" />
+          <ScalarProperty Name="Artist_ID" ColumnName="Artist_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artist_Info">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Artist_Info">
+        <MappingFragment StoreEntitySet="Artist_Info">
+          <ScalarProperty Name="Artist_Id" ColumnName="Artist_Id" />
+          <ScalarProperty Name="Artist_Name" ColumnName="Artist_Name" />
+          <ScalarProperty Name="Real_Name" ColumnName="Real_Name" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artist_Merch">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Artist_Merch">
+        <MappingFragment StoreEntitySet="Artist_Merch">
+          <ScalarProperty Name="Merch_ID" ColumnName="Merch_ID" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="Artist_ID" ColumnName="Artist_ID" />
+          <ScalarProperty Name="Cost_Per_Unit" ColumnName="Cost_Per_Unit" />
+          <ScalarProperty Name="Units_Sold" ColumnName="Units_Sold" />
+          <ScalarProperty Name="Type_" ColumnName="Type_" />
+          <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artist_Payout">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Artist_Payout">
+        <MappingFragment StoreEntitySet="Artist_Payout">
+          <ScalarProperty Name="Artist_ID" ColumnName="Artist_ID" />
+          <ScalarProperty Name="Money_Paid_Out" ColumnName="Money_Paid_Out" />
+          <ScalarProperty Name="Streaming_Money" ColumnName="Streaming_Money" />
+          <ScalarProperty Name="Merch_Money" ColumnName="Merch_Money" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artist_Socials">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Artist_Socials">
+        <MappingFragment StoreEntitySet="Artist_Socials">
+          <ScalarProperty Name="Artist_Id" ColumnName="Artist_Id" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="TikTok" ColumnName="TikTok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Music_Earnings">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Music_Earnings">
+        <MappingFragment StoreEntitySet="Music_Earnings">
+          <ScalarProperty Name="Internal_Id" ColumnName="Internal_Id" />
+          <ScalarProperty Name="Spotify_Earnings" ColumnName="Spotify_Earnings" />
+          <ScalarProperty Name="Apple_Earnings" ColumnName="Apple_Earnings" />
+          <ScalarProperty Name="Bandcamp_Earnings" ColumnName="Bandcamp_Earnings" />
+          <ScalarProperty Name="Youtube_Earnings" ColumnName="Youtube_Earnings" />
+          <ScalarProperty Name="Total_Owed" ColumnName="Total_Owed" />
+          <ScalarProperty Name="Artist_Id" ColumnName="Artist_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Music_Release">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Music_Release">
+        <MappingFragment StoreEntitySet="Music_Release">
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="Release_Date" ColumnName="Release_Date" />
+          <ScalarProperty Name="No_Of_Tracks" ColumnName="No_Of_Tracks" />
+          <ScalarProperty Name="Length_" ColumnName="Length_" />
+          <ScalarProperty Name="Main_Age" ColumnName="Main_Age" />
+          <ScalarProperty Name="Main_Gender" ColumnName="Main_Gender" />
+          <ScalarProperty Name="Internal_Id" ColumnName="Internal_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Performances">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Performance">
+        <MappingFragment StoreEntitySet="Performances">
+          <ScalarProperty Name="Performance_Id" ColumnName="Performance_Id" />
+          <ScalarProperty Name="Artist_Id" ColumnName="Artist_Id" />
+          <ScalarProperty Name="Event_Name" ColumnName="Event_Name" />
+          <ScalarProperty Name="Event_Organizer" ColumnName="Event_Organizer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song_Info">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.Song_Info">
+        <MappingFragment StoreEntitySet="Song_Info">
+          <ScalarProperty Name="ISRC" ColumnName="ISRC" />
+          <ScalarProperty Name="UPC" ColumnName="UPC" />
+          <ScalarProperty Name="Artist_ID" ColumnName="Artist_ID" />
+          <ScalarProperty Name="Minutes_Listened" ColumnName="Minutes_Listened" />
+          <ScalarProperty Name="Total_Listeners" ColumnName="Total_Listeners" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wpfArtist_Info">
+      <EntityTypeMapping TypeName="Label_DatabaseModel.wpfArtist_Info">
+        <MappingFragment StoreEntitySet="wpfArtist_Info">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Artist_Name" ColumnName="Artist_Name" />
+          <ScalarProperty Name="Real_Name" ColumnName="Real_Name" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

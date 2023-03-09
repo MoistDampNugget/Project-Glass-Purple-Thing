@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Label_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artist_Contact">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_Number" Type="Int32" />
+    <Property Name="Discord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Artist_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Artist_Co__Artis__398D8EEE" FromRole="Artist_Contact" ToRole="Artist_Info" />
+  </EntityType>
+  <EntityType Name="Artist_Info">
+    <Key>
+      <PropertyRef Name="Artist_Id" />
+    </Key>
+    <Property Name="Artist_Id" Type="Int32" Nullable="false" />
+    <Property Name="Artist_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Real_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Artist_Contact" Relationship="Self.FK__Artist_Co__Artis__398D8EEE" FromRole="Artist_Info" ToRole="Artist_Contact" />
+    <NavigationProperty Name="Artist_Merch" Relationship="Self.FK__Artist_Me__Artis__4F7CD00D" FromRole="Artist_Info" ToRole="Artist_Merch" />
+    <NavigationProperty Name="Artist_Payout" Relationship="Self.FK__Artist_Pa__Artis__52593CB8" FromRole="Artist_Info" ToRole="Artist_Payout" />
+    <NavigationProperty Name="Artist_Socials" Relationship="Self.FK__Artist_So__Artis__3F466844" FromRole="Artist_Info" ToRole="Artist_Socials" />
+    <NavigationProperty Name="Music_Earnings" Relationship="Self.FK__Music_Ear__Artis__44FF419A" FromRole="Artist_Info" ToRole="Music_Earnings" />
+    <NavigationProperty Name="Performances" Relationship="Self.FK__Performan__Artis__3C69FB99" FromRole="Artist_Info" ToRole="Performances" />
+    <NavigationProperty Name="Song_Info" Relationship="Self.FK__Song_Info__Artis__4BAC3F29" FromRole="Artist_Info" ToRole="Song_Info" />
+  </EntityType>
+  <EntityType Name="Artist_Merch">
+    <Key>
+      <PropertyRef Name="Merch_ID" />
+    </Key>
+    <Property Name="Merch_ID" Type="Int32" Nullable="false" />
+    <Property Name="UPC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Artist_ID" Type="Int32" />
+    <Property Name="Cost_Per_Unit" Type="Double" Nullable="false" />
+    <Property Name="Units_Sold" Type="Int32" />
+    <Property Name="Type_" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Selling_Price" Type="Double" />
+    <Property Name="Total" Type="Double" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Artist_Me__Artis__4F7CD00D" FromRole="Artist_Merch" ToRole="Artist_Info" />
+    <NavigationProperty Name="Music_Release" Relationship="Self.FK__Artist_Merc__UPC__4E88ABD4" FromRole="Artist_Merch" ToRole="Music_Release" />
+    <NavigationProperty Name="Artist_Payout" Relationship="Self.FK__Artist_Pa__Merch__5441852A" FromRole="Artist_Merch" ToRole="Artist_Payout" />
+  </EntityType>
+  <EntityType Name="Artist_Payout">
+    <Key>
+      <PropertyRef Name="Artist_ID" />
+    </Key>
+    <Property Name="Artist_ID" Type="Int32" Nullable="false" />
+    <Property Name="Money_Paid_Out" Type="Double" />
+    <Property Name="Streaming_Money" Type="Int32" />
+    <Property Name="Merch_Money" Type="Int32" />
+    <Property Name="Other" Type="Double" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Artist_Pa__Artis__52593CB8" FromRole="Artist_Payout" ToRole="Artist_Info" />
+    <NavigationProperty Name="Artist_Merch" Relationship="Self.FK__Artist_Pa__Merch__5441852A" FromRole="Artist_Payout" ToRole="Artist_Merch" />
+    <NavigationProperty Name="Music_Earnings" Relationship="Self.FK__Artist_Pa__Strea__534D60F1" FromRole="Artist_Payout" ToRole="Music_Earnings" />
+  </EntityType>
+  <EntityType Name="Artist_Socials">
+    <Key>
+      <PropertyRef Name="Artist_Id" />
+    </Key>
+    <Property Name="Artist_Id" Type="Int32" Nullable="false" />
+    <Property Name="Instagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Twitter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TikTok" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Artist_So__Artis__3F466844" FromRole="Artist_Socials" ToRole="Artist_Info" />
+  </EntityType>
+  <EntityType Name="Music_Earnings">
+    <Key>
+      <PropertyRef Name="Internal_Id" />
+    </Key>
+    <Property Name="Internal_Id" Type="Int32" Nullable="false" />
+    <Property Name="Spotify_Earnings" Type="Double" />
+    <Property Name="Apple_Earnings" Type="Double" />
+    <Property Name="Bandcamp_Earnings" Type="Double" />
+    <Property Name="Youtube_Earnings" Type="Double" />
+    <Property Name="Total_Owed" Type="Double" />
+    <Property Name="Artist_Id" Type="Int32" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Music_Ear__Artis__44FF419A" FromRole="Music_Earnings" ToRole="Artist_Info" />
+    <NavigationProperty Name="Artist_Payout" Relationship="Self.FK__Artist_Pa__Strea__534D60F1" FromRole="Music_Earnings" ToRole="Artist_Payout" />
+    <NavigationProperty Name="Music_Release" Relationship="Self.FK__Music_Rel__Inter__47DBAE45" FromRole="Music_Earnings" ToRole="Music_Release" />
+  </EntityType>
+  <EntityType Name="Music_Release">
+    <Key>
+      <PropertyRef Name="UPC" />
+    </Key>
+    <Property Name="UPC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Release_Date" Type="DateTime" Precision="0" />
+    <Property Name="No_Of_Tracks" Type="Int32" />
+    <Property Name="Length_" Type="Int32" />
+    <Property Name="Main_Age" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Main_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Internal_Id" Type="Int32" />
+    <NavigationProperty Name="Artist_Merch" Relationship="Self.FK__Artist_Merc__UPC__4E88ABD4" FromRole="Music_Release" ToRole="Artist_Merch" />
+    <NavigationProperty Name="Music_Earnings" Relationship="Self.FK__Music_Rel__Inter__47DBAE45" FromRole="Music_Release" ToRole="Music_Earnings" />
+    <NavigationProperty Name="Song_Info" Relationship="Self.FK__Song_Info__UPC__4AB81AF0" FromRole="Music_Release" ToRole="Song_Info" />
+  </EntityType>
+  <EntityType Name="Performance">
+    <Key>
+      <PropertyRef Name="Performance_Id" />
+    </Key>
+    <Property Name="Performance_Id" Type="Int32" Nullable="false" />
+    <Property Name="Artist_Id" Type="Int32" />
+    <Property Name="Event_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Event_Organizer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Performan__Artis__3C69FB99" FromRole="Performances" ToRole="Artist_Info" />
+  </EntityType>
+  <EntityType Name="Song_Info">
+    <Key>
+      <PropertyRef Name="ISRC" />
+    </Key>
+    <Property Name="ISRC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UPC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Artist_ID" Type="Int32" />
+    <Property Name="Minutes_Listened" Type="Int32" />
+    <Property Name="Total_Listeners" Type="Int32" />
+    <NavigationProperty Name="Artist_Info" Relationship="Self.FK__Song_Info__Artis__4BAC3F29" FromRole="Song_Info" ToRole="Artist_Info" />
+    <NavigationProperty Name="Music_Release" Relationship="Self.FK__Song_Info__UPC__4AB81AF0" FromRole="Song_Info" ToRole="Music_Release" />
+  </EntityType>
+  <EntityType Name="wpfArtist_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Artist_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Real_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Artist_Co__Artis__398D8EEE">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="1" />
+    <End Role="Artist_Contact" Type="Self.Artist_Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Artist_Contact">
+        <PropertyRef Name="Artist_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_Me__Artis__4F7CD00D">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="0..1" />
+    <End Role="Artist_Merch" Type="Self.Artist_Merch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Artist_Merch">
+        <PropertyRef Name="Artist_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_Pa__Artis__52593CB8">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="1" />
+    <End Role="Artist_Payout" Type="Self.Artist_Payout" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Artist_Payout">
+        <PropertyRef Name="Artist_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_So__Artis__3F466844">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="1" />
+    <End Role="Artist_Socials" Type="Self.Artist_Socials" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Artist_Socials">
+        <PropertyRef Name="Artist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Music_Ear__Artis__44FF419A">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="0..1" />
+    <End Role="Music_Earnings" Type="Self.Music_Earnings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Music_Earnings">
+        <PropertyRef Name="Artist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Performan__Artis__3C69FB99">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="0..1" />
+    <End Role="Performances" Type="Self.Performance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Performances">
+        <PropertyRef Name="Artist_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Song_Info__Artis__4BAC3F29">
+    <End Role="Artist_Info" Type="Self.Artist_Info" Multiplicity="0..1" />
+    <End Role="Song_Info" Type="Self.Song_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Info">
+        <PropertyRef Name="Artist_Id" />
+      </Principal>
+      <Dependent Role="Song_Info">
+        <PropertyRef Name="Artist_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_Merc__UPC__4E88ABD4">
+    <End Role="Music_Release" Type="Self.Music_Release" Multiplicity="0..1" />
+    <End Role="Artist_Merch" Type="Self.Artist_Merch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music_Release">
+        <PropertyRef Name="UPC" />
+      </Principal>
+      <Dependent Role="Artist_Merch">
+        <PropertyRef Name="UPC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_Pa__Merch__5441852A">
+    <End Role="Artist_Merch" Type="Self.Artist_Merch" Multiplicity="0..1" />
+    <End Role="Artist_Payout" Type="Self.Artist_Payout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist_Merch">
+        <PropertyRef Name="Merch_ID" />
+      </Principal>
+      <Dependent Role="Artist_Payout">
+        <PropertyRef Name="Merch_Money" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Artist_Pa__Strea__534D60F1">
+    <End Role="Music_Earnings" Type="Self.Music_Earnings" Multiplicity="0..1" />
+    <End Role="Artist_Payout" Type="Self.Artist_Payout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music_Earnings">
+        <PropertyRef Name="Internal_Id" />
+      </Principal>
+      <Dependent Role="Artist_Payout">
+        <PropertyRef Name="Streaming_Money" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Music_Rel__Inter__47DBAE45">
+    <End Role="Music_Earnings" Type="Self.Music_Earnings" Multiplicity="0..1" />
+    <End Role="Music_Release" Type="Self.Music_Release" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music_Earnings">
+        <PropertyRef Name="Internal_Id" />
+      </Principal>
+      <Dependent Role="Music_Release">
+        <PropertyRef Name="Internal_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Song_Info__UPC__4AB81AF0">
+    <End Role="Music_Release" Type="Self.Music_Release" Multiplicity="0..1" />
+    <End Role="Song_Info" Type="Self.Song_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music_Release">
+        <PropertyRef Name="UPC" />
+      </Principal>
+      <Dependent Role="Song_Info">
+        <PropertyRef Name="UPC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Label_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artist_Contact" EntityType="Self.Artist_Contact" />
+    <EntitySet Name="Artist_Info" EntityType="Self.Artist_Info" />
+    <EntitySet Name="Artist_Merch" EntityType="Self.Artist_Merch" />
+    <EntitySet Name="Artist_Payout" EntityType="Self.Artist_Payout" />
+    <EntitySet Name="Artist_Socials" EntityType="Self.Artist_Socials" />
+    <EntitySet Name="Music_Earnings" EntityType="Self.Music_Earnings" />
+    <EntitySet Name="Music_Release" EntityType="Self.Music_Release" />
+    <EntitySet Name="Performances" EntityType="Self.Performance" />
+    <EntitySet Name="Song_Info" EntityType="Self.Song_Info" />
+    <EntitySet Name="wpfArtist_Info" EntityType="Self.wpfArtist_Info" />
+    <AssociationSet Name="FK__Artist_Co__Artis__398D8EEE" Association="Self.FK__Artist_Co__Artis__398D8EEE">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Artist_Contact" EntitySet="Artist_Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_Me__Artis__4F7CD00D" Association="Self.FK__Artist_Me__Artis__4F7CD00D">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Artist_Merch" EntitySet="Artist_Merch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_Pa__Artis__52593CB8" Association="Self.FK__Artist_Pa__Artis__52593CB8">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Artist_Payout" EntitySet="Artist_Payout" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_So__Artis__3F466844" Association="Self.FK__Artist_So__Artis__3F466844">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Artist_Socials" EntitySet="Artist_Socials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Music_Ear__Artis__44FF419A" Association="Self.FK__Music_Ear__Artis__44FF419A">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Music_Earnings" EntitySet="Music_Earnings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Performan__Artis__3C69FB99" Association="Self.FK__Performan__Artis__3C69FB99">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Performances" EntitySet="Performances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Song_Info__Artis__4BAC3F29" Association="Self.FK__Song_Info__Artis__4BAC3F29">
+      <End Role="Artist_Info" EntitySet="Artist_Info" />
+      <End Role="Song_Info" EntitySet="Song_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_Merc__UPC__4E88ABD4" Association="Self.FK__Artist_Merc__UPC__4E88ABD4">
+      <End Role="Music_Release" EntitySet="Music_Release" />
+      <End Role="Artist_Merch" EntitySet="Artist_Merch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_Pa__Merch__5441852A" Association="Self.FK__Artist_Pa__Merch__5441852A">
+      <End Role="Artist_Merch" EntitySet="Artist_Merch" />
+      <End Role="Artist_Payout" EntitySet="Artist_Payout" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Artist_Pa__Strea__534D60F1" Association="Self.FK__Artist_Pa__Strea__534D60F1">
+      <End Role="Music_Earnings" EntitySet="Music_Earnings" />
+      <End Role="Artist_Payout" EntitySet="Artist_Payout" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Music_Rel__Inter__47DBAE45" Association="Self.FK__Music_Rel__Inter__47DBAE45">
+      <End Role="Music_Earnings" EntitySet="Music_Earnings" />
+      <End Role="Music_Release" EntitySet="Music_Release" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Song_Info__UPC__4AB81AF0" Association="Self.FK__Song_Info__UPC__4AB81AF0">
+      <End Role="Music_Release" EntitySet="Music_Release" />
+      <End Role="Song_Info" EntitySet="Song_Info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

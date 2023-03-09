@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ffa35b31f1b444c7ab68d716313ad561" Name="Diagram1">
+        <EntityTypeShape EntityType="Label_DatabaseModel.Artist_Contact" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Artist_Info" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Artist_Merch" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Artist_Payout" Width="1.5" PointX="12.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Artist_Socials" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Music_Earnings" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Music_Release" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Performance" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.Song_Info" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Label_DatabaseModel.wpfArtist_Info" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Co__Artis__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Me__Artis__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Pa__Artis__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_So__Artis__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Music_Ear__Artis__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Performan__Artis__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Song_Info__Artis__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Merc__UPC__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Pa__Merch__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Artist_Pa__Strea__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Music_Rel__Inter__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Label_DatabaseModel.FK__Song_Info__UPC__4AB81AF0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
